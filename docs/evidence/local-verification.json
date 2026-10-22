@@ -1,0 +1,195 @@
+{
+  "startedAt": "2026-10-22T09:52:32.136Z",
+  "finishedAt": "2026-10-22T09:52:33.870Z",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "node": "v24.14.0",
+  "platform": "darwin",
+  "osRelease": "25.5.0",
+  "arch": "arm64",
+  "version": "0.2.0",
+  "commands": [
+    "npm run build",
+    "node --import tsx --test --test-reporter=tap test/ai.test.ts test/bot.test.ts test/operations.test.ts test/outgoing-webhook.test.ts test/process.test.ts test/runtime-settings.test.ts"
+  ],
+  "buildExitCode": 0,
+  "testExitCode": 0,
+  "tests": 41,
+  "pass": 41,
+  "fail": 0,
+  "skipped": 0,
+  "localStatus": "PASS",
+  "liveTeamsAI": "NOT_TESTED",
+  "targetHost": "NOT_TESTED",
+  "note": "Fake credentials, mock providers and localhost only; no tenant or provider acceptance.",
+  "sourceSha256": "b641e9e5d9923c6597420eb6e27866cbfcb7f0399ccdb578f570a7a4e532a113",
+  "sourceFiles": [
+    {
+      "path": "src/ai/client.ts",
+      "sha256": "90cfade670a3cedec922f26030a3fc68dd3f94a46c277ba3262848ac803750d4"
+    },
+    {
+      "path": "src/ai/config.ts",
+      "sha256": "4574211401c27a7b6bc69d1ed8c6a64b877a330ac68df28e167b64dbfb9f621f"
+    },
+    {
+      "path": "src/ai/prompt.ts",
+      "sha256": "1be4da53121681655bba8570f664acf2d7d7ff9d1bb39b299bfd0de9140921a5"
+    },
+    {
+      "path": "src/ai/runtime-settings.ts",
+      "sha256": "517d422323aa4c3d7977a067fee6e85a5006e8678290ec85df603fa8eefdc43d"
+    },
+    {
+      "path": "src/ai/service.ts",
+      "sha256": "2566d0536f7da8e0243c24484202039199fe3defe1627e88fd094f163d1a41c6"
+    },
+    {
+      "path": "src/app.ts",
+      "sha256": "69935fa59623f2eb6aa686903e2b9e0727eb29350c715b6afbce693d1c18d233"
+    },
+    {
+      "path": "src/bot.ts",
+      "sha256": "99e7763c686cb3b5ba66e8c33c796c931bbea2cf71c8852b8fb8729649b03b85"
+    },
+    {
+      "path": "src/config.ts",
+      "sha256": "262683dfb55cf1484c59134046d2f7932cab8bde9b6878c2cd76ed3408e9c6bb"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "f038fd5938708a79da09f11f74c171ab475e90eabc4ac80a14a14b24d2b3de6c"
+    },
+    {
+      "path": "src/lifecycle.ts",
+      "sha256": "939b67601ceb6dda6f4ffb7b3b71541f34c461d2f24354c7491b04309c02ab97"
+    },
+    {
+      "path": "src/outgoing-webhook.ts",
+      "sha256": "1b85ccdc7f6b8846b54f396d2a996bc4eb2562fb31e7c52208eb4830f2e56bfb"
+    },
+    {
+      "path": "src/preview-server.ts",
+      "sha256": "029508510e307844c53514b477c8140f4c0840e4c3b5b52077eb5e2749574339"
+    },
+    {
+      "path": "src/preview.ts",
+      "sha256": "f70b4dd01c5161b59a5d6ce010c5ba611211090b5e6046a9a70025d71b04b9e1"
+    },
+    {
+      "path": "src/secrets.ts",
+      "sha256": "42e50b928b68ea7469da3d47ec19dd4240bc0fdfb6fb0f1ccd9bbf2dc8bc22c9"
+    },
+    {
+      "path": "src/settings-routes.ts",
+      "sha256": "171346f6bcb38655b459ea402c899b56dfa006328ae962d773363156d21368cc"
+    },
+    {
+      "path": "src/version.ts",
+      "sha256": "c31a36c88a8d990458b305d6bf25aded930b8990aaa2009e4564670cd105cf2b"
+    },
+    {
+      "path": "src/webhook.ts",
+      "sha256": "1048ebff1ea4ba814ac158fb4ea6b7f188c2d1affc04d7116473f9fb53e6f1e9"
+    },
+    {
+      "path": "test/ai.test.ts",
+      "sha256": "0d2db757eba254d2c9b5f25c117a27c1a8ce6c5836e188998f551da2dd786f6a"
+    },
+    {
+      "path": "test/bot.test.ts",
+      "sha256": "74ebacc5a27780d00ba00884db6b387546f28bee5ffa26a386f2ddffb1f2cecc"
+    },
+    {
+      "path": "test/operations.test.ts",
+      "sha256": "ca4192a4718505a7f102bc24a90c71f62d4bc5e3a656cfbc03422ca3bffcd857"
+    },
+    {
+      "path": "test/outgoing-webhook.test.ts",
+      "sha256": "9a9f4bdd657453c557fe7b1a4c7c33a2913581a8cd40d7a2a0ab377a772fbece"
+    },
+    {
+      "path": "test/process.test.ts",
+      "sha256": "16e98f1da58a8bd1221418eb11f963023b2e0ff4224fee9eba4abb630318e08d"
+    },
+    {
+      "path": "test/runtime-settings.test.ts",
+      "sha256": "ddc9dd7b3ced528fef4f68bc10efbe9d592337dbb43b1841694e13484245ea2a"
+    },
+    {
+      "path": "scripts/inspect-registration.mjs",
+      "sha256": "8f02e62f5f359fe5f4149a7068c49b3c06294cbad8f660f83a4e96baacb0ec3e"
+    },
+    {
+      "path": "scripts/package.mjs",
+      "sha256": "0e9bcdbd93cf569ae4066331786239848dd26a0525c1595a9f3caabf547a3b11"
+    },
+    {
+      "path": "scripts/preflight.mjs",
+      "sha256": "16183977627cf51a8ebbc446d58f34919a79854aa2ffdb98fe103c12f2d79da6"
+    },
+    {
+      "path": "scripts/release.mjs",
+      "sha256": "f7f658b249fa0ed6a35bc09733d046a4072a3187bf9275c8dbee652d2e6107c4"
+    },
+    {
+      "path": "scripts/run-teams.mjs",
+      "sha256": "d58c1547a7a5e9c0d8f6dd31193dc7a41cf5d8094b4fd94cbea3625d3ed7b573"
+    },
+    {
+      "path": "scripts/state.mjs",
+      "sha256": "d2ebe2ada8d187d28fccedb2dedc5f518f9bca81a24855b97e26af433f062cf1"
+    },
+    {
+      "path": "scripts/verify-local.mjs",
+      "sha256": "afdef538744272d895feb1848eb27f2adff78bfee0d4f4f19d69fff1319dd649"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "e7055dc84092b42c9d8746aa765d2035fe980d142d0192cd99e9995b9cb60446"
+    },
+    {
+      "path": "deploy/bot.env.example",
+      "sha256": "2009a5776050be047a0458c3a1386540b89767629a4851c5c09946bb0b1193e5"
+    },
+    {
+      "path": "deploy/journald@teams-bot.conf",
+      "sha256": "eb51ca7b11f33b7d8a5bea044327964ae499b4eb4363d24acd097bc0931d89ef"
+    },
+    {
+      "path": "deploy/nginx-location.conf",
+      "sha256": "90db771a084221c8e68561270418ef762ec91d10e0399b19b8b6bbdc98989369"
+    },
+    {
+      "path": "deploy/teams-bot.service",
+      "sha256": "03a1a57eb63cd5cacb105c7cb70364264e6cc33f00c49db2b662355b50631e0e"
+    },
+    {
+      "path": "public/preview.html",
+      "sha256": "3e81d8aa01ba77a80c0d295fd3c3c8919fdfb8d6489c7d54e6cf3fcb0fbc2b61"
+    },
+    {
+      "path": "public/settings.html",
+      "sha256": "4a09d51ef1882770bdcfbd47c998bb9b81ef018ae5e41e5a79599bb16ba9baeb"
+    },
+    {
+      "path": "public/settings.js",
+      "sha256": "eb98d7b2e8698f7228edaa47b7898ff7b15d6859e370d7079fb3807441c4a38b"
+    },
+    {
+      "path": "package.json",
+      "sha256": "c05ec6053969803f25e489e08db25a54bf555dfd944526a74ed4f0db85be6ccf"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "51ea4a9ac8b14942f623500c17f9184bdb91aa987d12bad73c2730cfe1e29dfe"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "5b21a4fa093fd60a78e7264518ead185303e62da9c4b3c9a50e0050dc400c0da"
+    },
+    {
+      "path": ".nvmrc",
+      "sha256": "75daa0bc10dae1f22b2d13386b55b232adf16930d4325902f37b5033b3a7ca93"
+    }
+  ]
+}

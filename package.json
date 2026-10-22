@@ -1,0 +1,40 @@
+{
+  "name": "fiin-team-bot",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Bot thử nghiệm Fiin cho Microsoft Teams",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "start:teams": "node --env-file=.env scripts/run-teams.mjs",
+    "start:webhook": "node --env-file=.env.webhook dist/webhook.js",
+    "dev": "tsx --env-file-if-exists=.env src/index.ts",
+    "preview": "tsx --env-file-if-exists=.env src/preview.ts",
+    "package:teams": "node --env-file-if-exists=.env scripts/package.mjs",
+    "inspect:teams": "node --env-file=.env scripts/inspect-registration.mjs",
+    "test": "tsx --test test/*.test.ts",
+    "verify:local": "node scripts/verify-local.mjs",
+    "release": "npm run build && node scripts/release.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "teams": "teams"
+  },
+  "dependencies": {
+    "@microsoft/teams.api": "2.1.1",
+    "@microsoft/teams.apps": "2.1.1"
+  },
+  "devDependencies": {
+    "@microsoft/teams.cli": "3.1.0-preview.7",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "ajv": "^8.17.1",
+    "ajv-draft-04": "^1.0.0",
+    "ajv-formats": "^3.0.1",
+    "fflate": "^0.8.2",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}

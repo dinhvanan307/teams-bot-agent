@@ -1,0 +1,263 @@
+BUILD
+
+> fiin-team-bot@0.2.0 build
+> tsc -p tsconfig.json
+
+
+TEST
+TAP version 13
+# Subtest: AI config: disabled needs no key; enabled requires explicit provider/model/key and a safe base URL
+ok 1 - AI config: disabled needs no key; enabled requires explicit provider/model/key and a safe base URL
+  ---
+  duration_ms: 2.028459
+  type: 'test'
+  ...
+# Subtest: AI adapter openai: protocol, auth, token cap, usage, no hidden reasoning
+ok 2 - AI adapter openai: protocol, auth, token cap, usage, no hidden reasoning
+  ---
+  duration_ms: 5.544375
+  type: 'test'
+  ...
+# Subtest: AI adapter openai-compatible: protocol, auth, token cap, usage, no hidden reasoning
+ok 3 - AI adapter openai-compatible: protocol, auth, token cap, usage, no hidden reasoning
+  ---
+  duration_ms: 1.072959
+  type: 'test'
+  ...
+# Subtest: AI adapter gemini: protocol, auth, token cap, usage, no hidden reasoning
+ok 4 - AI adapter gemini: protocol, auth, token cap, usage, no hidden reasoning
+  ---
+  duration_ms: 0.653042
+  type: 'test'
+  ...
+# Subtest: AI adapter anthropic: protocol, auth, token cap, usage, no hidden reasoning
+ok 5 - AI adapter anthropic: protocol, auth, token cap, usage, no hidden reasoning
+  ---
+  duration_ms: 0.376042
+  type: 'test'
+  ...
+# Subtest: Chat Completions can select max_completion_tokens without sending both limits
+ok 6 - Chat Completions can select max_completion_tokens without sending both limits
+  ---
+  duration_ms: 0.316125
+  type: 'test'
+  ...
+# Subtest: API errors are classified without leaking raw responses or automatically retrying
+ok 7 - API errors are classified without leaking raw responses or automatically retrying
+  ---
+  duration_ms: 2.354833
+  type: 'test'
+  ...
+# Subtest: API timeout aborts the request and returns a sanitized error
+ok 8 - API timeout aborts the request and returns a sanitized error
+  ---
+  duration_ms: 10.580917
+  type: 'test'
+  ...
+# Subtest: AI service rejects long inputs, limits users and daily requests, and resets by UTC day
+ok 9 - AI service rejects long inputs, limits users and daily requests, and resets by UTC day
+  ---
+  duration_ms: 1.864291
+  type: 'test'
+  ...
+# Subtest: concurrency is reserved before awaiting; errors release slots but still consume allowance
+ok 10 - concurrency is reserved before awaiting; errors release slots but still consume allowance
+  ---
+  duration_ms: 0.290792
+  type: 'test'
+  ...
+# Subtest: Teams handler keeps commands local, requires mention, strips it and scopes quota by tenant/user
+ok 11 - Teams handler keeps commands local, requires mention, strips it and scopes quota by tenant/user
+  ---
+  duration_ms: 0.478833
+  type: 'test'
+  ...
+# Subtest: preview HTTP → handler → mock openai HTTP → reply
+ok 12 - preview HTTP → handler → mock openai HTTP → reply
+  ---
+  duration_ms: 36.942334
+  type: 'test'
+  ...
+# Subtest: preview HTTP → handler → mock openai-compatible HTTP → reply
+ok 13 - preview HTTP → handler → mock openai-compatible HTTP → reply
+  ---
+  duration_ms: 12.89875
+  type: 'test'
+  ...
+# Subtest: preview HTTP → handler → mock gemini HTTP → reply
+ok 14 - preview HTTP → handler → mock gemini HTTP → reply
+  ---
+  duration_ms: 7.050667
+  type: 'test'
+  ...
+# Subtest: preview HTTP → handler → mock anthropic HTTP → reply
+ok 15 - preview HTTP → handler → mock anthropic HTTP → reply
+  ---
+  duration_ms: 9.903417
+  type: 'test'
+  ...
+# Subtest: chào hỏi và lệnh có khoảng trắng/dấu slash/chữ hoa
+ok 16 - chào hỏi và lệnh có khoảng trắng/dấu slash/chữ hoa
+  ---
+  duration_ms: 0.747
+  type: 'test'
+  ...
+# Subtest: kênh và nhóm chat chỉ trả lời khi được @bot; SDK bỏ mention
+ok 17 - kênh và nhóm chat chỉ trả lời khi được @bot; SDK bỏ mention
+  ---
+  duration_ms: 0.139875
+  type: 'test'
+  ...
+# Subtest: bộ đếm tách hội thoại/tenant và reset không ảnh hưởng hội thoại khác
+ok 18 - bộ đếm tách hội thoại/tenant và reset không ảnh hưởng hội thoại khác
+  ---
+  duration_ms: 0.166
+  type: 'test'
+  ...
+# Subtest: không khởi động chế độ Teams khi thiếu cấu hình hoặc cổng sai
+ok 19 - không khởi động chế độ Teams khi thiếu cấu hình hoặc cổng sai
+  ---
+  duration_ms: 0.371625
+  type: 'test'
+  ...
+# Subtest: endpoint Teams thật của SDK chặn request thiếu JWT, kể cả env yêu cầu tắt auth
+ok 20 - endpoint Teams thật của SDK chặn request thiếu JWT, kể cả env yêu cầu tắt auth
+  ---
+  duration_ms: 39.049416
+  type: 'test'
+  ...
+# Subtest: Teams manifest preserves gateway prefix, aligns version and rejects ambiguous base URLs
+ok 21 - Teams manifest preserves gateway prefix, aligns version and rejects ambiguous base URLs
+  ---
+  duration_ms: 1.471458
+  type: 'test'
+  ...
+# Subtest: Teams ZIP validates schema and contains only manifest and icons with fake IDs
+ok 22 - Teams ZIP validates schema and contains only manifest and icons with fake IDs
+  ---
+  duration_ms: 53.771083
+  type: 'test'
+  ...
+# Subtest: secret file loader rejects ambiguous, missing, oversized or broad-access files without leaking content
+ok 23 - secret file loader rejects ambiguous, missing, oversized or broad-access files without leaking content
+  ---
+  duration_ms: 0.845542
+  type: 'test'
+  ...
+# Subtest: production requires explicit state and external key, forbids key inside state and never generates a local key
+ok 24 - production requires explicit state and external key, forbids key inside state and never generates a local key
+  ---
+  duration_ms: 2.373542
+  type: 'test'
+  ...
+# Subtest: readiness and liveness differ on corrupt config, disabled required AI and drain; probes never call AI
+ok 25 - readiness and liveness differ on corrupt config, disabled required AI and drain; probes never call AI
+  ---
+  duration_ms: 20.29125
+  type: 'test'
+  ...
+# Subtest: shutdown waits for active handlers, rejects new work and is idempotent
+ok 26 - shutdown waits for active handlers, rejects new work and is idempotent
+  ---
+  duration_ms: 0.396958
+  type: 'test'
+  ...
+# Subtest: shutdown deadline forces transport closure and reports undrained work
+ok 27 - shutdown deadline forces transport closure and reports undrained work
+  ---
+  duration_ms: 20.655125
+  type: 'test'
+  ...
+# Subtest: backup and offline restore preserve encrypted configuration; wrong keys and corrupt snapshots are rejected
+ok 28 - backup and offline restore preserve encrypted configuration; wrong keys and corrupt snapshots are rejected
+  ---
+  duration_ms: 6.168958
+  type: 'test'
+  ...
+# Subtest: release verifier detects modification and refuses traversal paths
+ok 29 - release verifier detects modification and refuses traversal paths
+  ---
+  duration_ms: 1.23425
+  type: 'test'
+  ...
+# Subtest: webhook không chạy khi thiếu token, token sai định dạng hoặc thiếu tenant
+ok 30 - webhook không chạy khi thiếu token, token sai định dạng hoặc thiếu tenant
+  ---
+  duration_ms: 1.1215
+  type: 'test'
+  ...
+# Subtest: HTTP webhook: @ping, UTF-8 nguyên bản, HMAC, tenant và giới hạn payload
+ok 31 - HTTP webhook: @ping, UTF-8 nguyên bản, HMAC, tenant và giới hạn payload
+  ---
+  duration_ms: 67.143
+  type: 'test'
+  ...
+# Subtest: compiled production process starts with fake credentials, serves probes and exits on SIGTERM
+ok 32 - compiled production process starts with fake credentials, serves probes and exits on SIGTERM
+  ---
+  duration_ms: 483.533958
+  type: 'test'
+  ...
+# Subtest: compiled production process fails before listening when the external encryption key is absent
+ok 33 - compiled production process fails before listening when the external encryption key is absent
+  ---
+  duration_ms: 154.090375
+  type: 'test'
+  ...
+# Subtest: encrypted settings persist across processes, mask keys, protect file modes and fail closed on corruption or missing key
+ok 34 - encrypted settings persist across processes, mask keys, protect file modes and fail closed on corruption or missing key
+  ---
+  duration_ms: 2.965042
+  type: 'test'
+  ...
+# Subtest: saved profile overrides env as a whole; clear disables AI rather than reactivating env credentials
+ok 35 - saved profile overrides env as a whole; clear disables AI rather than reactivating env credentials
+  ---
+  duration_ms: 2.438375
+  type: 'test'
+  ...
+# Subtest: endpoint/provider changes require an explicit key; normalized same endpoint may keep key; stale updates are rejected
+ok 36 - endpoint/provider changes require an explicit key; normalized same endpoint may keep key; stale updates are rejected
+  ---
+  duration_ms: 5.741208
+  type: 'test'
+  ...
+# Subtest: live handler picks up settings from another runtime; help/disable change immediately and quotas survive model switches
+ok 37 - live handler picks up settings from another runtime; help/disable change immediately and quotas survive model switches
+  ---
+  duration_ms: 10.4745
+  type: 'test'
+  ...
+# Subtest: draft connection test is bounded, sanitized, rate limited and never activates or saves
+ok 38 - draft connection test is bounded, sanitized, rate limited and never activates or saves
+  ---
+  duration_ms: 2.189625
+  type: 'test'
+  ...
+# Subtest: test adapter timeout maps to a safe admin error
+ok 39 - test adapter timeout maps to a safe admin error
+  ---
+  duration_ms: 1.329791
+  type: 'test'
+  ...
+# Subtest: HTTP settings → test draft → save → preview uses gateway; origin/Host/token blocked, keys never returned
+ok 40 - HTTP settings → test draft → save → preview uses gateway; origin/Host/token blocked, keys never returned
+  ---
+  duration_ms: 56.348208
+  type: 'test'
+  ...
+# Subtest: Teams public server has no admin console; runtime privacy reflects enable/disable without restart
+ok 41 - Teams public server has no admin console; runtime privacy reflects enable/disable without restart
+  ---
+  duration_ms: 13.584416
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 811.444084

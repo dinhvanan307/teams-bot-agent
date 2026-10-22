@@ -1,0 +1,41 @@
+# Reference only: requires a Linux host with systemd >= 245 and tested Node 24.14.0.
+# Host acceptance remains NOT_TESTED until the runbook is executed on the selected host.
+[Unit]
+Description=Teams Bot Agent
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=teams-bot
+Group=teams-bot
+WorkingDirectory=/opt/teams-bot/current
+EnvironmentFile=/etc/teams-bot/bot.env
+ExecStartPre=/usr/bin/node scripts/preflight.mjs
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=40
+KillMode=control-group
+StateDirectory=teams-bot
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/teams-bot
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=512M
+TasksMax=128
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+LogNamespace=teams-bot
+SyslogIdentifier=teams-bot
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="preview-token" content="__TOKEN__"><title>Kết nối AI — Fiin Team Bot</title>
+<style nonce="__TOKEN__">
+*{box-sizing:border-box}body{margin:0;background:#f3f5fa;color:#172038;font:15px/1.6 system-ui,sans-serif}main{max-width:880px;margin:36px auto;padding:0 24px 40px}a{color:#2349a4;text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:30px}.brand{font-weight:750;letter-spacing:-.3px}.local{font-size:12px;color:#53647d;border:1px solid #d8e0ed;border-radius:20px;padding:4px 12px}h1{font-size:30px;letter-spacing:-.8px;line-height:1.2;margin:8px 0 12px}p{margin:8px 0 16px}.muted,small{color:#59677f}small{display:block;font-size:13px;margin-top:6px}.card{background:white;border:1px solid #dce2ed;border-radius:16px;padding:26px;margin-top:24px}.status-row{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #e5eaf3;padding-bottom:18px;margin-bottom:22px}.badge{border-radius:8px;background:#eef2fa;color:#435776;padding:4px 10px;font-size:13px;font-weight:600;white-space:nowrap;align-self:flex-start}.badge.on{background:#e2f4eb;color:#176b45}.status-row p{margin:3px 0 0;font-size:13px}label{display:block;font-weight:600;margin-bottom:7px}input,select,textarea{width:100%;border:1px solid #bcc8da;border-radius:9px;padding:11px 12px;background:#fff;color:#172038;font:inherit}input:focus,select:focus,textarea:focus{outline:3px solid #dce7ff;border-color:#2349a4}textarea{resize:vertical;min-height:120px}.field{margin-bottom:21px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}details{border-top:1px solid #e5eaf3;padding-top:16px;margin-top:4px}summary{cursor:pointer;font-weight:600;margin-bottom:18px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}button{border:1px solid #bac7dc;background:#fff;color:#24416e;border-radius:9px;padding:11px 17px;font:inherit;font-weight:600;cursor:pointer}button.primary{background:#2349a4;border-color:#2349a4;color:white}button:disabled{opacity:.5;cursor:wait}.secondary-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}.text-button{padding:5px 0;border:0;font-weight:500;font-size:13px;background:none}.danger{color:#a73a35}#feedback{margin:18px 0 0;border-radius:10px;padding:12px 14px;background:#edf2fc;overflow-wrap:anywhere}#feedback:empty{display:none}#feedback.error{background:#fff0ed;color:#9e322a}#feedback.success{background:#e8f5ed;color:#176b45}.footer{margin-top:22px;font-size:13px;color:#66748b}.step{font-size:12px;text-transform:uppercase;letter-spacing:1.3px;color:#617596;font-weight:700}fieldset{border:0;margin:0;padding:0;min-width:0}[hidden]{display:none!important}@media(max-width:600px){main{margin-top:20px;padding:0 16px 28px}.card{padding:20px}.grid{grid-template-columns:1fr}.actions button{flex:1}h1{font-size:26px}.local{font-size:11px}}
+</style></head>
+<body><main>
+<nav><a class="brand" href="/">← Fiin Team Bot</a><span class="local">Quản trị trên máy</span></nav>
+<div class="step">Thiết lập trợ lý</div><h1>Kết nối AI của bạn</h1>
+<p class="muted">Chọn kiểu API, nhập model và key. Kiểm tra kết nối rồi lưu để bot dùng ngay.</p>
+<section class="card" aria-label="Cấu hình AI">
+<div class="status-row"><div><strong>Kết nối đang dùng</strong><p id="current" class="muted">Đang tải cấu hình…</p></div><span id="badge" class="badge">Đang tải</span></div>
+<form id="settings-form"><fieldset id="fields" disabled>
+<div class="field"><label for="provider">Kiểu API</label><select id="provider" name="provider">
+<option value="openai-compatible">OpenAI-compatible / Gateway</option><option value="openai">OpenAI — Responses</option><option value="gemini">Google Gemini</option><option value="anthropic">Anthropic Claude</option></select>
+<small id="provider-hint">Dùng cho dịch vụ hỗ trợ chuẩn Chat Completions và Bearer API key.</small></div>
+<div class="field"><label for="baseUrl">Base URL</label><input id="baseUrl" name="baseUrl" type="url" maxlength="2048" required placeholder="https://gateway.example.com/v1" spellcheck="false" autocomplete="off">
+<small>URL gốc API, gồm đường dẫn phiên bản nếu có. Không thêm /chat/completions hoặc endpoint cuối.</small></div>
+<div class="field"><label for="model">Model</label><input id="model" name="model" required maxlength="200" placeholder="Tên model từ nhà cung cấp của bạn" spellcheck="false" autocomplete="off"></div>
+<div class="field"><label for="apiKey">API key</label><input id="apiKey" name="apiKey" type="password" maxlength="8192" placeholder="Nhập key cho kết nối này" autocomplete="new-password" spellcheck="false">
+<small id="key-hint">Key được lưu mã hóa trên máy chủ. Không đưa vào gói ZIP Teams.</small></div>
+<details><summary>Hướng dẫn trả lời và giới hạn</summary>
+<div class="field"><label for="systemPrompt">Hướng dẫn cho AI</label><textarea id="systemPrompt" name="systemPrompt" maxlength="8000"></textarea></div>
+<div class="grid">
+<div class="field"><label for="timeoutMs">Thời gian chờ (ms)</label><input id="timeoutMs" name="timeoutMs" type="number" min="1" max="120000" required></div>
+<div class="field"><label for="maxOutputTokens">Token đầu ra tối đa</label><input id="maxOutputTokens" name="maxOutputTokens" type="number" min="1" max="32768" required></div>
+<div class="field"><label for="maxInputChars">Ký tự mỗi câu hỏi</label><input id="maxInputChars" name="maxInputChars" type="number" min="1" max="20000" required></div>
+<div class="field"><label for="dailyRequestLimit">Lượt gọi mỗi ngày (UTC)</label><input id="dailyRequestLimit" name="dailyRequestLimit" type="number" min="1" max="1000000" required></div>
+<div class="field"><label for="userRequestsPerMinute">Lượt mỗi người / phút</label><input id="userRequestsPerMinute" name="userRequestsPerMinute" type="number" min="1" max="1000" required></div>
+<div class="field"><label for="maxConcurrent">Yêu cầu đồng thời</label><input id="maxConcurrent" name="maxConcurrent" type="number" min="1" max="100" required></div>
+</div>
+<div class="field" id="chat-options"><label for="chatTokenParameter">Tham số giới hạn token</label><select id="chatTokenParameter" name="chatTokenParameter"><option value="max_tokens">max_tokens</option><option value="max_completion_tokens">max_completion_tokens</option></select><small>Chọn theo tài liệu API/model đang dùng.</small></div>
+<div id="anthropic-options" class="grid" hidden><div class="field"><label for="anthropicVersion">Phiên bản API Anthropic</label><input id="anthropicVersion" name="anthropicVersion" maxlength="10"></div><div class="field"><label for="anthropicWorkspaceId">Workspace ID (nếu cần)</label><input id="anthropicWorkspaceId" name="anthropicWorkspaceId" maxlength="200" autocomplete="off"></div></div>
+<small>Hạn mức theo từng tiến trình, đặt lại khi khởi động lại. Đây là giới hạn sử dụng, chưa phải trần chi phí tiền.</small>
+</details>
+<div class="actions"><button type="button" id="test">Kiểm tra kết nối</button><button type="submit" class="primary">Lưu và bật AI</button></div>
+<small>Kiểm tra gọi API bằng nội dung mẫu, có thể tính phí. Bản đang nhập chỉ có hiệu lực sau khi lưu.</small>
+<div class="secondary-actions"><button type="button" class="text-button" id="disable">Tắt AI, giữ kết nối</button><button type="button" class="text-button danger" id="clear">Xóa kết nối đã lưu</button></div>
+</fieldset></form>
+<p id="feedback" role="status" aria-live="polite"></p><button class="text-button" id="reload" type="button">Tải lại cấu hình đang lưu</button>
+</section>
+<p class="footer">Teams và bản chạy thử dùng chung cấu hình khi chạy cùng thư mục lưu trữ. Thay đổi áp dụng từ câu hỏi tiếp theo; lượt đang chạy dùng cấu hình cũ. <a href="/">Mở chat thử →</a></p>
+</main><script src="/settings.js" defer></script></body></html>
