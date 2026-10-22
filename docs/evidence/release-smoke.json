@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-22T10:01:52.499Z",
+  "status": "PASS",
+  "platform": "darwin",
+  "arch": "arm64",
+  "node": "v24.14.0",
+  "releaseCommit": "39ad99d0931b2ba38d00129b636b1cff5495e59f",
+  "artifact": "artifacts/teams-bot-agent-0.2.0-39ad99d0931b.zip",
+  "artifactSha256": "a6922eab6817565c7a7fa748b00e820f6c407f788ed2c362cdaf03bc786506ee",
+  "checksumFilesVerified": 53,
+  "productionInstall": "npm ci --omit=dev --no-audit --no-fund; exit 0; 114 packages",
+  "preflight": {
+    "ok": true,
+    "node": "v24.14.0",
+    "aiEnabled": false,
+    "externalAPIsChecked": false
+  },
+  "httpStatuses": {
+    "/healthz": 200,
+    "/readyz": 200,
+    "/settings": 404,
+    "/api/settings": 404,
+    "/api/messages unauthenticated": 401
+  },
+  "shutdownExitCode": 0,
+  "shutdownDrained": true,
+  "encryptedBackupRestore": "PASS with fake profile and external test key",
+  "liveTeamsAI": "NOT_TESTED",
+  "targetHost": "NOT_TESTED",
+  "note": "Isolated extracted ZIP on local macOS; no real tenant, provider or host acceptance."
+}

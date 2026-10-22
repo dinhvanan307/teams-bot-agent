@@ -5,6 +5,8 @@ Baseline gói 1 phiên bản **0.2.0**. Bộ release, vận hành và bảo vệ
 - [Triển khai và vận hành](docs/DEPLOYMENT.md)
 - [Kế hoạch nghiệm thu tích hợp](docs/INTEGRATION-PLAN.md)
 - [Lịch sử thay đổi](CHANGELOG.md)
+- [Báo cáo chi tiết gói 1 ngày 22/10/2026](docs/reports/Bao_cao_hoan_thien_goi_1_Teams_Bot_Agent_22-10-2026.pdf)
+- [Bằng chứng kiểm thử local](docs/evidence/local-verification.json), [smoke release](docs/evidence/release-smoke.json) và [GitHub CI baseline](docs/evidence/github-ci.json)
 
 Repository riêng: `dinhvanan307/teams-bot-agent`. Dùng Node trong `.nvmrc` cho baseline đã kiểm thử.
 
